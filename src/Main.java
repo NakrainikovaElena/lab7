@@ -12,6 +12,12 @@ public class Main {
         Visitor vacations = new Vacations();
         student.accept(vacations);
         professor.accept(vacations);
+
+        System.out.println("---");
+
+        Visitor certification = new Certification();
+        student.accept(certification);
+        professor.accept(certification);
     }
 }
 
@@ -32,6 +38,7 @@ class Student implements Persona {
 
     public void takeExam() { System.out.println("Студент сдает экзамен."); }
     public void relax() { System.out.println("Студент отдыхает."); }
+    public void getCertified() { System.out.println("Студент проходит аттестацию."); }
 }
 
 class Professor implements Persona {
@@ -42,6 +49,7 @@ class Professor implements Persona {
 
     public void conductExam() { System.out.println("Профессор принимает экзамен."); }
     public void goOnVacation() { System.out.println("Профессор идет в отпуск."); }
+    public void carryOutCertification() { System.out.println("Профессор проводит аттестацию"); }
 }
 
 class Session implements Visitor {
@@ -65,5 +73,17 @@ class Vacations implements Visitor {
     @Override
     public void visitProfessor(Professor professor) {
         professor.goOnVacation();
+    }
+}
+
+class Certification implements Visitor {
+    @Override
+    public void visitStudent(Student student) {
+        student.getCertified();
+    }
+
+    @Override
+    public void visitProfessor(Professor professor) {
+        professor.carryOutCertification();
     }
 }
