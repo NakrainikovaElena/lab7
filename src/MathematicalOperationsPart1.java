@@ -1,4 +1,4 @@
-class MathematicalOperations {
+/*class MathematicalOperationsPart1 {
     public static void main(String[] args) {
         //пример без дерева для сравнения с примером с деревом
         Expression n1 = new Number(32.0);
@@ -201,4 +201,4 @@ class CopySyntaxTree implements Transformer {
     public Expression transformVariable(Variable var) {
         return new Variable(var.name());
     }
-}
+}*/
